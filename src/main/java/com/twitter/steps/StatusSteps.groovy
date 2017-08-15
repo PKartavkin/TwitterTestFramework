@@ -17,7 +17,7 @@ class StatusSteps extends BaseStep {
                 .extract()
                 .path("id_str")
         createdStatuses.put(status, statusId)
-        LOG.debug("Status is created. Text: ${status}. ID: ${statusId}")
+        LOG.info("Status is created. Text: ${status}. ID: ${statusId}")
     }
 
     def userCantDuplicateStatus(String status) {
@@ -42,7 +42,7 @@ class StatusSteps extends BaseStep {
                 .then()
                 .statusCode(200)
 
-        LOG.debug("Removed status ${status} with ID: ${statusId}")
+        LOG.info("Removed status ${status} with ID: ${statusId}")
     }
 
     def rollbackStatuses() {
